@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <img id="ImageMap1" class="img-fluid center" src="/static/advent2019.jpg" usemap="#imagemap">
+    <map name="imagemap" id="imagemap">
+        <area shape="rect" coords="27,89,121,194"       href="go_to_day?day=1" title="" alt="">
+        <area shape="rect" coords="706,647,890,764"     href="go_to_day?day=2" title="" alt="">
+        <area shape="rect" coords="863,236,1016,345"    href="go_to_day?day=3" title="" alt="">
+        <area shape="rect" coords="915,5,1018,103"      href="go_to_day?day=4" title="" alt="">
+        <area shape="rect" coords="148,629,244,731"     href="go_to_day?day=5" title="" alt="">
+        <area shape="rect" coords="598,92,688,191"      href="go_to_day?day=6" title="" alt="">
+        <area shape="rect" coords="7,306,133,424"       href="go_to_day?day=7" title="" alt="">
+        <area shape="rect" coords="520,233,645,402"     href="go_to_day?day=8" title="" alt="">
+        <area shape="rect" coords="331,53,431,212"      href="go_to_day?day=9" title="" alt="">
+        <area shape="rect" coords="938,116,1021,227"    href="go_to_day?day=10" title="" alt="">
+        <area shape="rect" coords="481,2,592,113"       href="go_to_day?day=11" title="" alt="">
+        <area shape="rect" coords="844,369,943,469"     href="go_to_day?day=12" title="" alt="">
+        <area shape="rect" coords="893,602,1020,765"    href="go_to_day?day=13" title="" alt="">
+        <area shape="rect" coords="314,643,425,748"     href="go_to_day?day=14" title="" alt="">
+        <area shape="rect" coords="5,640,115,748"       href="go_to_day?day=15" title="" alt="">
+        <area shape="rect" coords="260,161,329,251"     href="go_to_day?day=16" title="" alt="">
+        <area shape="rect" coords="652,206,772,334"     href="go_to_day?day=17" title="" alt="">
+        <area shape="rect" coords="694,342,823,463"     href="go_to_day?day=18" title="" alt="">
+        <area shape="rect" coords="167,107,253,210"     href="go_to_day?day=19" title="" alt="">
+        <area shape="rect" coords="830,46,913,194"      href="go_to_day?day=20" title="" alt="">
+        <area shape="rect" coords="6,507,124,625"       href="go_to_day?day=21" title="" alt="">
+        <area shape="rect" coords="76,214,211,297"      href="go_to_day?day=22" title="" alt="">
+        <area shape="rect" coords="712,68,818,176"      href="go_to_day?day=23" title="" alt="">
+        <area shape="rect" coords="439,122,534,223"     href="go_to_day?day=24" title="" alt="">
+    </map>
+    <br>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <a href="{{ url_for('instructions') }}" class="btn btn-light btn-lg btn-block">Click Here For Instructions</a>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+{% endblock content %}
