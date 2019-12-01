@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<br>
+<a href="{{ url_for('home') }}">
+    <img src="static/BackBtn.png" alt="Back">
+</a>
+<div class="container white-background">
+    <br>
+
+    <h1>Coming soon...</h1>
+    <p>Check back on December {{ required_day }} to view this devotion!</p>
+    <br>
+    <br>
+</div>
+{% endblock content %}
