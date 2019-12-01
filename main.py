@@ -1,4 +1,5 @@
-import datetime
+from datetime import datetime
+from pytz import timezone
 from flask import Flask, request, render_template, url_for, redirect
 app = Flask(__name__)
 
@@ -14,11 +15,11 @@ def instructions():
 @app.route("/go_to_day")
 def go_to_day():
     day = int(request.args.get('day'))
-    dt = datetime.datetime.today()
-    if day <= dt.day or dt.month < 4:
+    dt = datetime.now(timezone('US/Eastern'))
+    if (dt.month == 12 and day <= dt.day) or dt.month < 4:
         return redirect(f'http://www.westbradenton.org/family-advent/posts/december-{day}')
     else:
-        return render_template('too_early.html')
+        return render_template('too_early.html', required_day=day)
 
 # Run flask
 if __name__ == '__main__':
