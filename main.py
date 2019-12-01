@@ -14,14 +14,19 @@ def instructions():
 
 @app.route("/go_to_day")
 def go_to_day():
-    day = int(request.args.get('day'))
+    try:
+        day = int(request.args.get('day'))
+    except (ValueError, TypeError):
+        return render_template('home.html')
+
     dt = datetime.now(timezone('US/Eastern'))
-    if (dt.month == 12 and day <= dt.day) or dt.month < 4:
+
+    if (dt.month == 12 and day <= dt.day) or dt.month < 8:
         return redirect(f'http://www.westbradenton.org/family-advent/posts/december-{day}')
     else:
         return render_template('too_early.html', required_day=day)
 
 # Run flask
 if __name__ == '__main__':
-    app.run(debug=True)
-    # app.run(host='0.0.0.0', port=80)
+    # app.run(debug=True)
+    app.run(host='0.0.0.0', port=80)
